@@ -4,19 +4,19 @@ This project is a Know Your Customer (KYC) application that uses various Optical
 
 ## Project Structure
 
-KYC-application 
-├── FaceRecognition 
-│   └── face_recognition.py     # Face recognition related code 
-├── images 
-│   └── CI_Specimen.jpeg        # Sample image for OCR 
-├── OCR  
-│   ├── EasyOCR.py              # EasyOCR script   
-│   ├── Keras-OCR.py            # Keras-OCR script 
-│   ├── PaddleOCR.py            # PaddleOCR script 
-│   └── Pytesseract.py          # Pytesseract script 
-├── output                      # Directory for OCR output results 
-├── .gitignore                  # Git ignore file 
-├── README.md                   # Project documentation 
+KYC-application
+├── FaceRecognition
+│   └── face_recognition.py     # Face recognition related code
+├── images
+│   └── CI_Specimen.jpeg        # Sample image for OCR
+├── OCR
+│   ├── EasyOCR.py              # EasyOCR script
+│   ├── Keras-OCR.py            # Keras-OCR script
+│   ├── PaddleOCR.py            # PaddleOCR script
+│   └── Pytesseract.py          # Pytesseract script
+├── output                      # Directory for OCR output results
+├── .gitignore                  # Git ignore file
+├── README.md                   # Project documentation
 └── requirements.txt            # Project dependencies
 
 ## OCR Tools
