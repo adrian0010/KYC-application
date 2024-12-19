@@ -13,8 +13,7 @@ KYC-application
 │   ├── EasyOCR.py              # EasyOCR script   
 │   ├── Keras-OCR.py            # Keras-OCR script 
 │   ├── PaddleOCR.py            # PaddleOCR script 
-│ 
-└── Pytesseract.py              # Pytesseract script 
+│   └── Pytesseract.py          # Pytesseract script 
 ├── output                      # Directory for OCR output results 
 ├── .gitignore                  # Git ignore file 
 ├── README.md                   # Project documentation 
