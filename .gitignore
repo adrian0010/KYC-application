@@ -5,5 +5,8 @@ __pycache__/
 # Ignore images directory
 images/
 
+# Ignore output directory
+output/
+
 # Ignore virtual environment directory
 venv/

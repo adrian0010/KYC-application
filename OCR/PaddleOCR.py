@@ -1,42 +1,43 @@
-import easyocr
-import re
-import os
+import logging
+from paddleocr import PaddleOCR, draw_ocr
 import cv2
 import matplotlib.pyplot as plt
-import numpy as np
+import re
+import os
 
-# Initialize the easyocr reader - Romanian language
-reader = easyocr.Reader(['ro'])
+# Set logging level to ERROR to suppress debug logs
+logging.getLogger('ppocr').setLevel(logging.ERROR)
+
+# Initialize the OCR. Set use_angle_cls=True if text orientation matters.
+ocr = PaddleOCR(use_angle_cls=True, lang='ro')
 
 # Define labels to exclude
+#labels_to_exclude = []
 labels_to_exclude = [
-    "ROUMANIE",
-    "ROIIFsiJih",
     "ROMANIA",
+    "ROUMANIE",
     "CARTE",
-    "CARTE",
-    "DE",
-    "IDENTITATE",
-    "identity",
+    "CARTE DE IDENTITATE",
+    "IDENTITY",
     "D'IDENTITE",
     "SERIA",
     "NR",
-    "Card",
+    "CARD",
     "CNP", 
-    "Nume/Nom/Last name", 
-    "Prenume/Prenom/First name", 
-    "CetătenielNationalitelNationality", 
-    "SexlSexelSex", 
-    "ROU",
-    "Loc nastere/Lieu de naissancelPlace of birth", 
+    "Nume/Nom/Lastname", 
+    "Prenume/Prenom/Firstname", 
+    "Cetatenie/Nationalite/Nationality", 
+    "Sex/Sexe/Sex", 
+    "Romanä\ROU",
+    "Loc nastere/Lieu de naissance/Placeof birth", 
     "Jud",
     "Jud.",
     "SPCLEP",
     "Domiciliu/Adresse/Address", 
     "717",
     "evo",
-    "Emisa delDelivree parllssued by", 
-    "ValabilitatelValidite/ Validity"
+    "Emisäde/Delivree par/lssued by", 
+    "Valabilitate/Validite/Validity"
 ]
 
 # Function to check if a text line is an MRZ line
@@ -45,14 +46,14 @@ def is_mrz_line(text):
 
 # Function to parse MRZ lines for Romanian ID card
 def parse_mrz(mrz_lines):
-    if len(mrz_lines) == 2 and all(len(line) == 36 for line in mrz_lines):  # Romanian ID card format
+    if len(mrz_lines) == 2 and all(len(line) == 36 for line in mrz_lines):
         line1, line2 = mrz_lines
         document_type = line1[0:2]
         issuing_country = line1[2:5]
         names = line1[5:].split('<<', 1)
         last_name = names[0].replace('<', ' ').strip()
         first_name = names[1].replace('<', ' ').strip() if len(names) > 1 else ''
-        
+
         id_number = line2[0:9].replace('<', '')
         id_number_check_digit = line2[9]
         nationality = line2[10:13]
@@ -64,7 +65,7 @@ def parse_mrz(mrz_lines):
         cnp_series = line2[28]
         cnp_number = line2[29:35]
         final_check_digit = line2[35]
-        
+
         return {
             "document_type": document_type,
             "issuing_country": issuing_country,
@@ -89,17 +90,18 @@ image_folder = 'images'
 for image_file in os.listdir(image_folder):
     if image_file.lower().endswith(('.png', '.jpg', '.jpeg')):
         image_path = os.path.join(image_folder, image_file)
-        
+
         # Perform OCR on the image
-        # result is a list of (bbox, text, confidence)
-        result = reader.readtext(image_path)
+        # PaddleOCR's result format: [[ [box], (text, confidence) ], ...]
+        result = ocr.ocr(image_path, cls=True)
 
-        # Extract and filter text, excluding specified labels
-        # Also keep original order and confidence to display in the right subplot
-        filtered_results = [(bbox, text, conf) for (bbox, text, conf) in result if text not in labels_to_exclude]
+        # Extract recognized text lines
+        # result[0] contains a list of lines: [ [box, (text, confidence)], ...]
+        txts = [line[1][0] for line in result[0]]
+        confidences = [line[1][1] for line in result[0]]
 
-        # Extract just the texts for MRZ checking
-        filtered_text = [res[1] for res in filtered_results]
+        # Filter out unwanted labels
+        filtered_text = [t for t in txts if t not in labels_to_exclude]
 
         # Extract MRZ lines
         mrz_lines = [text for text in filtered_text if is_mrz_line(text)]
@@ -107,54 +109,29 @@ for image_file in os.listdir(image_folder):
         # Parse MRZ lines
         mrz_data = parse_mrz(mrz_lines)
 
-        # Print filtered text and MRZ data in the console
         print(f"Filtered Extracted Text from {image_file}:")
-        for t in filtered_text:
-            print(t)
-        
+        for text in filtered_text:
+            print(text)
+
         print(f"\nParsed MRZ Data from {image_file}:")
         for key, value in mrz_data.items():
             print(f"{key}: {value}")
         print("\n" + "="*50 + "\n")
-        
-        # ---------------- Visualization Setup ----------------
-        fig, (ax_img, ax_text) = plt.subplots(1, 2, figsize=(15,10))
 
-        # Draw bounding boxes and text on the image
+        # Visualize the OCR results:
+        boxes = [line[0] for line in result[0]]
         img = cv2.imread(image_path)
-        for i, (bbox, text, confidence) in enumerate(filtered_results):
-            pts = np.array([bbox], dtype=np.int32)
-            cv2.polylines(img, [pts], True, (0, 255, 0), 2)
-            top_left_x = int(bbox[0][0])
-            top_left_y = int(bbox[0][1]) - 10
-            cv2.putText(img, text, (top_left_x, top_left_y), 
-                        cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255,0,0), 1, cv2.LINE_AA)
-
-        # Convert to RGB for matplotlib visualization
-        img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-        ax_img.imshow(img_rgb)
-        ax_img.axis('off')
-        ax_img.set_title("Detected Text on ID Image")
-
-        ax_text.axis('off')
-        ax_text.set_title("Recognized Text Lines & Confidence", fontsize=14)
+        font_path = 'C:/Windows/Fonts/arial.ttf'  # Update font path if necessary
+        img_with_boxes = draw_ocr(img, boxes, txts, confidences, font_path=font_path)
+        img_with_boxes = cv2.cvtColor(img_with_boxes, cv2.COLOR_BGR2RGB)
         
-        # Starting vertical position
-        y_pos = 1.0
-        line_height = 0.04  # adjust as needed
-        
-        for i, (bbox, text, conf) in enumerate(filtered_results, start=1):
-            ax_text.text(0.01, y_pos, f"{i}: {text}  {conf:.3f}", fontsize=12, transform=ax_text.transAxes)
-            y_pos -= line_height
-
-        # Adjust layout
-        plt.tight_layout()
-
         # Save the image with OCR results to the output folder
         output_folder = 'output'
         os.makedirs(output_folder, exist_ok=True)
-        output_image_path = os.path.join(output_folder, f"EasyOCR_output_{os.path.basename(image_file)}")
-        plt.savefig(output_image_path, dpi=200)
+        output_image_path = os.path.join(output_folder, f"PaddleOCR_output_{os.path.basename(image_file)}")
+        cv2.imwrite(output_image_path, cv2.cvtColor(img_with_boxes, cv2.COLOR_RGB2BGR))
         
-        # Show the figure
+        plt.figure(figsize=(10,10))
+        plt.imshow(img_with_boxes)
+        plt.axis('off')
         plt.show()
