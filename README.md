@@ -4,6 +4,7 @@ This project is a Know Your Customer (KYC) application that uses various Optical
 
 ## Project Structure
 
+```
 KYC-application
 ├── FaceRecognition
 │   └── face_recognition.py     # Face recognition related code
@@ -18,6 +19,7 @@ KYC-application
 ├── .gitignore                  # Git ignore file
 ├── README.md                   # Project documentation
 └── requirements.txt            # Project dependencies
+```
 
 ## OCR Tools
 
