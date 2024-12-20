@@ -1,0 +1,43 @@
+Filtered Extracted Text from CI_Specimen4.jpg:
+1: RON  0.873
+2: TAT  0.635
+3: TUA  0.653
+4: CNP2410415400342  0.975
+5: Nume/Nom/Last.name  0.933
+6: 93C0Q  0.938
+7: VASILESCU  0.994
+8: Prenume/Prenom/Firstn  0.961
+9: ELENA  0.992
+10: Romana/ROU  0.917
+11: CetatenierNatlonalite/Nat  0.954
+12: Sex/Saxe/Sex  0.928
+13: Loc.nastece/Lieu de nais  0.821
+14: Mun.Dej Jud.Cl  0.924
+15: Mun.Bucuresti  0.946
+16: pv/essepv/natowoc  0.543
+17: 900  0.954
+18: Str.Nicolae Iorga nr  0.947
+19: D.E.P.A.B.D  0.992
+20: Emisa de/Delvreepatssued by  0.815
+21: 06.01.17-15.04.2077  0.993
+22: IDROUVASILESCU<<ELENA<<<<<<<<<<<<<<<  0.974
+23: SS099994<0R0U4104151F770415824003421  0.979
+
+Parsed MRZ Data from CI_Specimen4.jpg:
+document_type: ID
+issuing_country: ROU
+last_name: VASILESCU
+first_name: ELENA
+id_number: SS099994
+id_number_check_digit: 0
+nationality: R0U
+birth_date: 410415
+birth_date_check_digit: 1
+sex: F
+expiration_date: 770415
+expiration_date_check_digit: 8
+cnp_series: 2
+cnp_number: 400342
+final_check_digit: 1
+
+==================================================

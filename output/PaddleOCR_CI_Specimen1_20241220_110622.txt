@@ -1,0 +1,33 @@
+Filtered Extracted Text from CI_Specimen1.png:
+1: ROD  0.747
+2: MIARN  0.503
+3: M.A  0.539
+4: CARTEDE IDENTITATE  0.969
+5: SERIAXHNR123456  0.958
+6: CNP 1234567890123  0.980
+7: 12P34  0.997
+8: Nume/Nom/Last name  0.975
+9: MANAILA  0.997
+10: Prenume/Prenom/First na  0.965
+11: DANIELFLORIN  0.996
+12: PH  0.993
+13: Cetatenie/Nationalite/National  0.991
+14: Romanä /ROU  0.802
+15: Loc nastere/Lieu de naissance/Placeo  0.943
+16: Ebirth  0.832
+17: Jud.BH Mun.Oradea  0.951
+18: Str.Fagurelui  0.975
+19: nr.9 blD13 sc.3 et.2  0.953
+20: ap.51  0.991
+21: 410222 0radea  0.970
+22: 337  1.000
+23: BHay  0.609
+24: Emisade/Delivreepar/lssued by  0.957
+25: SPCLEP Oradea  0.951
+26: 23.07.18-23.072028  0.994
+27: IDROUMANILA<<DANIEL<FLORN<<<<<<<<<  0.867
+28: Xh123456<2r0u7510233m280723810584472  0.950
+
+Parsed MRZ Data from CI_Specimen1.png:
+
+==================================================

@@ -4,6 +4,7 @@ import cv2
 import matplotlib.pyplot as plt
 import re
 import os
+from datetime import datetime
 
 # Set logging level to ERROR to suppress debug logs
 logging.getLogger('ppocr').setLevel(logging.ERROR)
@@ -12,7 +13,6 @@ logging.getLogger('ppocr').setLevel(logging.ERROR)
 ocr = PaddleOCR(use_angle_cls=True, lang='ro')
 
 # Define labels to exclude
-#labels_to_exclude = []
 labels_to_exclude = [
     "ROMANIA",
     "ROUMANIE",
@@ -23,20 +23,20 @@ labels_to_exclude = [
     "SERIA",
     "NR",
     "CARD",
-    "CNP", 
-    "Nume/Nom/Lastname", 
-    "Prenume/Prenom/Firstname", 
-    "Cetatenie/Nationalite/Nationality", 
-    "Sex/Sexe/Sex", 
-    "Romanä\ROU",
-    "Loc nastere/Lieu de naissance/Placeof birth", 
+    "CNP",
+    "Nume/Nom/Lastname",
+    "Prenume/Prenom/Firstname",
+    "Cetatenie/Nationalite/Nationality",
+    "Sex/Sexe/Sex",
+    "Romanä\\ROU",
+    "Loc nastere/Lieu de naissance/Placeof birth",
     "Jud",
     "Jud.",
     "SPCLEP",
-    "Domiciliu/Adresse/Address", 
+    "Domiciliu/Adresse/Address",
     "717",
     "evo",
-    "Emisäde/Delivree par/lssued by", 
+    "Emisäde/Delivree par/lssued by",
     "Valabilitate/Validite/Validity"
 ]
 
@@ -85,26 +85,27 @@ def parse_mrz(mrz_lines):
         }
     return {}
 
-# Process each image in the images folder
+# Ensure output directory exists
+output_folder = 'output'
+os.makedirs(output_folder, exist_ok=True)
+
 image_folder = 'images'
 for image_file in os.listdir(image_folder):
     if image_file.lower().endswith(('.png', '.jpg', '.jpeg')):
         image_path = os.path.join(image_folder, image_file)
 
         # Perform OCR on the image
-        # PaddleOCR's result format: [[ [box], (text, confidence) ], ...]
         result = ocr.ocr(image_path, cls=True)
 
-        # Extract recognized text lines
-        # result[0] contains a list of lines: [ [box, (text, confidence)], ...]
-        txts = [line[1][0] for line in result[0]]
-        confidences = [line[1][1] for line in result[0]]
+        # Create a combined list of (bbox, text, conf)
+        lines = [(line[0], line[1][0], line[1][1]) for line in result[0]]
 
         # Filter out unwanted labels
-        filtered_text = [t for t in txts if t not in labels_to_exclude]
+        filtered_lines = [(bbox, text, conf) for (bbox, text, conf) in lines if text not in labels_to_exclude]
+        filtered_text = [text for (bbox, text, conf) in filtered_lines]
 
         # Extract MRZ lines
-        mrz_lines = [text for text in filtered_text if is_mrz_line(text)]
+        mrz_lines = [t for t in filtered_text if is_mrz_line(t)]
 
         # Parse MRZ lines
         mrz_data = parse_mrz(mrz_lines)
@@ -118,20 +119,47 @@ for image_file in os.listdir(image_folder):
             print(f"{key}: {value}")
         print("\n" + "="*50 + "\n")
 
-        # Visualize the OCR results:
+        # Visualize the OCR results
         boxes = [line[0] for line in result[0]]
+        txts = [line[1][0] for line in result[0]]
+        confidences = [line[1][1] for line in result[0]]
+
         img = cv2.imread(image_path)
-        font_path = 'C:/Windows/Fonts/arial.ttf'  # Update font path if necessary
+        font_path = 'C:/Windows/Fonts/arial.ttf'  # Update if necessary
         img_with_boxes = draw_ocr(img, boxes, txts, confidences, font_path=font_path)
         img_with_boxes = cv2.cvtColor(img_with_boxes, cv2.COLOR_BGR2RGB)
-        
-        # Save the image with OCR results to the output folder
-        output_folder = 'output'
-        os.makedirs(output_folder, exist_ok=True)
+
+        # Save the image with OCR results
         output_image_path = os.path.join(output_folder, f"PaddleOCR_output_{os.path.basename(image_file)}")
         cv2.imwrite(output_image_path, cv2.cvtColor(img_with_boxes, cv2.COLOR_RGB2BGR))
-        
+
+        # Display the image
         plt.figure(figsize=(10,10))
         plt.imshow(img_with_boxes)
         plt.axis('off')
         plt.show()
+
+        # Prepare the text output for this specific image
+        output_text = []
+        output_text.append(f"Filtered Extracted Text from {os.path.basename(image_file)}:")
+
+        for i, (bbox, text, conf) in enumerate(filtered_lines, start=1):
+            output_text.append(f"{i}: {text}  {conf:.3f}")
+
+        output_text.append(f"\nParsed MRZ Data from {os.path.basename(image_file)}:")
+        for key, value in mrz_data.items():
+            output_text.append(f"{key}: {value}")
+
+        output_text.append("\n" + "="*50 + "\n")
+
+        # Get the current date and time
+        now = datetime.now()
+        timestamp = now.strftime("%Y%m%d_%H%M%S")
+
+        # Create a unique text file name for each image
+        text_output_file = f"PaddleOCR_{os.path.splitext(os.path.basename(image_file))[0]}_{timestamp}.txt"
+        output_text_path = os.path.join(output_folder, text_output_file)
+
+        # Write the output text for this image
+        with open(output_text_path, 'w', encoding='utf-8') as f:
+            f.write("\n".join(output_text))

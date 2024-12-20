@@ -1,0 +1,42 @@
+Filtered Extracted Text from CI_Specimen7.png:
+1: ROVMATIIA  0.751
+2: SERIA AX NR 777881  0.905
+3: CNP5020501015564  0.982
+4: 95D2F  0.997
+5: Nume/Nom/Last name  0.965
+6: BALEA  0.990
+7: Prenume/Prenom/First name  0.970
+8: CRISTIAN-CONSTANTIN  0.997
+9: Romanä/ ROU  0.774
+10: M  0.999
+11: Loc nastere/Lieude naissance/Place of birth  0.950
+12: Jud.AB Ors.Abrud  0.955
+13: Domiciliu/Adresse/Addres  0.996
+14: Jud.AB Sat.Carpinis (Com.Rosia Montana)  0.921
+15: nr.770A  0.994
+16: 002  0.999
+17: AB  0.996
+18: Emisade/Delivreepar/lssued by  0.946
+19: SPCLEP Abrud  0.960
+20: 29.05.20-01.05.2027  0.994
+21: IDROUBALEA<<CRISTIAN<CONSTANTIN<<<<<  0.954
+22: AX777881<3R0U0205012M270501150155644  0.993
+
+Parsed MRZ Data from CI_Specimen7.png:
+document_type: ID
+issuing_country: ROU
+last_name: BALEA
+first_name: CRISTIAN CONSTANTIN
+id_number: AX777881
+id_number_check_digit: 3
+nationality: R0U
+birth_date: 020501
+birth_date_check_digit: 2
+sex: M
+expiration_date: 270501
+expiration_date_check_digit: 1
+cnp_series: 5
+cnp_number: 015564
+final_check_digit: 4
+
+==================================================
