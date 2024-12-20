@@ -1,0 +1,57 @@
+Filtered Extracted Text from CI_Specimen3.jpg:
+1: D'ISERTFTE  0.343
+2: CaRTMRE  0.466
+3: "64,7997E  0.111
+4: IDENFIY  0.306
+5: Seria  0.386
+6: 1640902220542  0.922
+7: J4V5Q  0.521
+8: Nume Nomilast name  0.432
+9: DOE  0.997
+10: Poenurne  0.198
+11: renom/Firs  0.277
+12: JOHN  0.959
+13: Celatenie Nationallte/^  0.346
+14: Sex Sexe Sex  0.561
+15: Româna  0.501
+16: /ROU  0.384
+17: Loc naslererLleu  0.369
+18: com  0.962
+19: Cod   0.180
+20: Domiciliu/Adresse Add  0.715
+21: Mun.  0.988
+22: as  0.907
+23: Str. Libertăț-  0.647
+24: nr.22  0.974
+25: bl.632  0.604
+26: SC.D  0.553
+27: ap.2  0.995
+28: 442  1.000
+29: IS  0.974
+30: Emisa de Dellvree parllssued by  0.501
+31: alabilitate Validite Validity  0.808
+32: SPCLEP Iasi  0.899
+33: 06.01.17-02.09.2077  0.999
+34: IDROUDOE<<JOHN<<<<<<<<<<<<<<<<<<<<<<  0.377
+35: MX6419944R0U6409029M7709025222034296  0.688
+36: nce  0.601
+37: Ias  0.996
+
+Parsed MRZ Data from CI_Specimen3.jpg:
+document_type: ID
+issuing_country: ROU
+last_name: DOE
+first_name: JOHN
+id_number: MX6419944
+id_number_check_digit: R
+nationality: 0U6
+birth_date: 409029
+birth_date_check_digit: M
+sex: 7
+expiration_date: 709025
+expiration_date_check_digit: 2
+cnp_series: 2
+cnp_number: 203429
+final_check_digit: 6
+
+==================================================

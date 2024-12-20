@@ -1,0 +1,45 @@
+Filtered Extracted Text from CI_Specimen1.png:
+1: ROJAJIJA  0.175
+2: CARTE DE IDENTITATE  0.973
+3: IDENTITY  0.978
+4: SeRIA  0.484
+5: XH nr 123456  0.373
+6: CARD  0.965
+7: 234567890123  0.991
+8: 12P34  0.991
+9: Nume/Nom Last name  0.513
+10: MANAILA  1.000
+11: Pronumg  0.329
+12: Pronom/First  0.714
+13: innz  0.010
+14: DANIEL  0.950
+15: FLORIN  0.999
+16: CetatenielNationalitelNatlonallty  0.670
+17: Sex Sexe/Sex  0.908
+18: Română  0.999
+19: Loc nastere/Liou do naissance Place of birth  0.452
+20: Jud .BH Mun.Oradea  0.628
+21: Domicillu/Adresse/Addre  0.454
+22: Str.Fagurelui  0.994
+23: BH  0.994
+24: nr.9 bl.D13 sc.3 et_  0.542
+25: ap.51 410222 Oradea  0.726
+26: 337  1.000
+27: Emisa dclDelivree parllssued by  0.593
+28: Valabilitate Validitc Validity  0.470
+29: SPCLEP Oradea  0.965
+30: 23.07.18-23.07.2028  0.421
+31: IDROUMANILA<<DANIEL<FLORN<<<<<<<<<<  0.756
+32: XH123456<2R0U7510233M280723810584472  0.674
+33: OGRAPI  0.450
+34: EDITOGRAPHY  0.545
+35: QGRA  0.241
+36: EDIt  0.306
+37: OGRAPHY  0.976
+38: 'PHY  0.292
+39: ATOGRAPHY  0.397
+40: ITOGRAF  0.273
+
+Parsed MRZ Data from CI_Specimen1.png:
+
+==================================================

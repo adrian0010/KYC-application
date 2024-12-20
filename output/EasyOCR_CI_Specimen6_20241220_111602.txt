@@ -1,0 +1,29 @@
+Filtered Extracted Text from CI_Specimen6.png:
+1: ROVAsjJiJ  0.154
+2: CARTE DE  0.954
+3: SeRIA RX  0.317
+4: "583845e  0.402
+5: IPENFIY  0.340
+6: 620222400084  1.000
+7: NumelNom/Last name  0.323
+8: 2413Q  0.424
+9: TIȚĂ  0.809
+10: Prenumo/Prenom/First name  0.672
+11: GICU-ROMEO  0.999
+12: Cetatenio/NatlonalitelNationality  0.779
+13: Sex/Soxe/Sex  0.942
+14: Română  1.000
+15: Loc nasterelLiou de naissance Placo of birth  0.681
+16: Mun Bucuresti Sec.-  0.872
+17: Mun Bucuresti Sec.6  0.677
+18: Bld.Timisoara nr.43 bl.P13 sc.8 ap.142  0.460
+19: 847  1.000
+20: Valabilitate/Validite /Validily  0.755
+21: SPCEP. Sector 6  0.780
+22: 04.03.16-22.02.2026  0.943
+23: IDROUTITA<<GICU<ROMEO<<<<<<<<<<<<<<<  0.668
+24: RX868048<4R0u6202220M260222414000849  0.794
+
+Parsed MRZ Data from CI_Specimen6.png:
+
+==================================================

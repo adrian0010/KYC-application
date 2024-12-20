@@ -1,0 +1,41 @@
+Filtered Extracted Text from CI_Specimen2.jpg:
+1: JRO  0.412
+2: VFGI  0.124
+3: D'isertfte  0.110
+4: CArTEP  0.208
+5: PRE  0.557
+6: "o0o0â0F  0.032
+7: idexay  0.167
+8: ooooOOOOOOOT  0.331
+9: R6900  0.917
+10: om  0.282
+11: uan  0.218
+12: VASILE  1.000
+13: Pnomifira(  0.043
+14: IONESCU  0.999
+15: Catotonlonouonallto  0.119
+16: uonnlt  0.106
+17: 60,/5010 601  0.118
+18: Română  0.960
+19: Loc  0.175
+20: Lieu do  0.378
+21: laco  0.402
+22: "blrth  0.114
+23: SPECIMEN SPECIMEN  0.988
+24: Domlcilluladross  0.477
+25: aoo  0.044
+26: SPECIMEN  0.999
+27: SPECIMEN  1.000
+28: 580  1.000
+29: PH  0.969
+30: Ernisa delDeli  0.312
+31: parllasued  0.236
+32: 00.00.0O-00.00.0ooO  0.204
+33: alabihtalo:  0.222
+34: S.PCLEP  0.791
+35: IdRoU<<<<}<<SPECIMEN<}<}<<<<}}}}<<  0.011
+36: <<446644664666664446666666<<<6}<<<  0.000
+
+Parsed MRZ Data from CI_Specimen2.jpg:
+
+==================================================

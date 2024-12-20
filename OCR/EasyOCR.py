@@ -4,6 +4,7 @@ import os
 import cv2
 import matplotlib.pyplot as plt
 import numpy as np
+from datetime import datetime
 
 # Initialize the easyocr reader - Romanian language
 reader = easyocr.Reader(['ro'])
@@ -95,7 +96,6 @@ for image_file in os.listdir(image_folder):
         result = reader.readtext(image_path)
 
         # Extract and filter text, excluding specified labels
-        # Also keep original order and confidence to display in the right subplot
         filtered_results = [(bbox, text, conf) for (bbox, text, conf) in result if text not in labels_to_exclude]
 
         # Extract just the texts for MRZ checking
@@ -117,7 +117,7 @@ for image_file in os.listdir(image_folder):
             print(f"{key}: {value}")
         print("\n" + "="*50 + "\n")
         
-        # ---------------- Visualization Setup ----------------
+        # Visualization Setup
         fig, (ax_img, ax_text) = plt.subplots(1, 2, figsize=(15,10))
 
         # Draw bounding boxes and text on the image
@@ -150,7 +150,7 @@ for image_file in os.listdir(image_folder):
         # Adjust layout
         plt.tight_layout()
 
-        # Save the image with OCR results to the output folder
+        # Save the figure (image + text listing) to the output folder
         output_folder = 'output'
         os.makedirs(output_folder, exist_ok=True)
         output_image_path = os.path.join(output_folder, f"EasyOCR_output_{os.path.basename(image_file)}")
@@ -158,3 +158,29 @@ for image_file in os.listdir(image_folder):
         
         # Show the figure
         plt.show()
+
+        # Prepare the text output for this specific image
+        output_text = []
+        output_text.append(f"Filtered Extracted Text from {os.path.basename(image_file)}:")
+        
+        # Include each filtered line with its confidence
+        for i, (bbox, text, conf) in enumerate(filtered_results, start=1):
+            output_text.append(f"{i}: {text}  {conf:.3f}")
+
+        output_text.append(f"\nParsed MRZ Data from {os.path.basename(image_file)}:")
+        for key, value in mrz_data.items():
+            output_text.append(f"{key}: {value}")
+
+        output_text.append("\n" + "="*50 + "\n")
+
+        # Get the current date and time
+        now = datetime.now()
+        timestamp = now.strftime("%Y%m%d_%H%M%S")
+
+        # Create a unique text file name for each image
+        text_output_file = f"EasyOCR_{os.path.splitext(os.path.basename(image_file))[0]}_{timestamp}.txt"
+        output_text_path = os.path.join(output_folder, text_output_file)
+
+        # Write the output text to a file
+        with open(output_text_path, 'w', encoding='utf-8') as f:
+            f.write("\n".join(output_text))

@@ -1,0 +1,33 @@
+Filtered Extracted Text from CI_Specimen7.png:
+1: ROJIAsUJ  0.080
+2: CARTE DE |DEnTItAtE  0.184
+3: idENTITY  0.214
+4: D'iDENTITE  0.351
+5: SeRIA AX  0.344
+6: 777881  1.000
+7: CaRD  0.233
+8: 5020501015564  1.000
+9: 95D2F  0.701
+10: Nume NomiLast name  0.483
+11: BALEA  1.000
+12: CRISTIAN-CONSTANTIN  1.000
+13: CetatenlelNatlonallte/Nationality  0.552
+14: Sex/Sexe/Sex  0.931
+15: Română  0.780
+16: M  1.000
+17: Loc nasterelLieu de naissancelPlace of birth  0.485
+18: Jud AB Orș Abrud  0.543
+19: DomiciliulAdresse/ Address  0.585
+20: Jud.AB Sat. Cărpiniș (Com. Roșia Montană)  0.472
+21: nr.770A  0.882
+22: 002  0.985
+23: AB  0.998
+24: Valabilitate ValiditelValidity  0.717
+25: SPCLEP Abrud  0.691
+26: 29.05.20-01.05.2027  0.705
+27: IDROUBALEA<<CRISTIAN<CONSTANTIN<<<<<  0.779
+28: AX777881<3R0u0205012M270501150155644  0.790
+
+Parsed MRZ Data from CI_Specimen7.png:
+
+==================================================
