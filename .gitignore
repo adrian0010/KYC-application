@@ -3,10 +3,13 @@ __pycache__/
 *.pyc
 
 # Ignore images directory
-images/
+#images/
 
 # Ignore output directory
-output/
+#output/
+
+# Ignore private directory
+private/
 
 # Ignore virtual environment directory
 venv/
