@@ -1,0 +1,10 @@
+Final projects. How to?
+=======================
+
+1. Choose your team members and a team name.
+2. Choose a project from the provided list or come up with your own.
+3. Create a github repository for your code. (Training data shouldn't be upload there.)
+4. Validation is necessary. For all projects compute your detection KPIs: FP/FN/TP/TN. Other metrics are also acceptable.
+5. Training and test data will be provided via Google Drive for each project.
+6. Projects details and datasets will be given together with the registration form.
+
