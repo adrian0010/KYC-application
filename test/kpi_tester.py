@@ -3,6 +3,8 @@ import json
 import cv2
 import numpy as np
 from datetime import datetime
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 ############################################
 # 1. SAMPLE TEST DATA (manually labeled)
@@ -44,6 +46,106 @@ test_data = [
             ,"CNP": "1620222400084"
         },
         "same_person": False
+    },
+    {
+        "id_image": "test_images/test_id_4.jpg",
+        "selfie_image": "test_images/test_selfie_4.jpg",
+        "expected_ocr_fields": {
+            "first_name": "ANDREI"
+            ,"last_name": "BARTA"
+            ,"birth_date": "05-Jul-82"
+            ,"CNP": "1820705303972"
+        },
+        "same_person": True
+    },
+    {
+        "id_image": "test_images/test_id_5.jpg",
+        "selfie_image": "test_images/test_selfie_5.jpg",
+        "expected_ocr_fields": {
+            "first_name": "LAVINIA SIMONA"
+            ,"last_name": "AILOAIEI"
+            ,"birth_date": "19-Jul-95"
+            ,"CNP": "2950719070025"
+        },
+        "same_person": True
+    },
+    {
+        "id_image": "test_images/test_id_6.jpg",
+        "selfie_image": "test_images/test_selfie_6.jpg",
+        "expected_ocr_fields": {
+            "first_name": "RALUCA IOANA"
+            ,"last_name": "DUMITRU"
+            ,"birth_date": "03-Jan-90"
+            ,"CNP": "2900103294726"
+        },
+        "same_person": True
+    },
+    {
+        "id_image": "test_images/test_id_6.jpg",
+        "selfie_image": "test_images/test_selfie_5.jpg",
+        "expected_ocr_fields": {
+            "first_name": "RALUCA IOANA"
+            ,"last_name": "DUMITRU"
+            ,"birth_date": "03-Jan-90"
+            ,"CNP": "2900103294726"
+        },
+        "same_person": False
+    },
+    {
+        "id_image": "test_images/test_id_1.jpg",
+        "selfie_image": "test_images/test_selfie_5.jpg",
+        "expected_ocr_fields": {
+            "first_name": "ELENA"
+            ,"last_name": "VASILESCU"
+            ,"birth_date": "15-Apr-41"
+            ,"CNP": "2410415400342"
+        },
+        "same_person": False
+    },
+    {
+        # Image is not clear enough
+        "id_image": "test_images/test_id_7.jpg",
+        "selfie_image": "test_images/test_selfie_7.jpg",
+        "expected_ocr_fields": {
+            "first_name": "CATALIN IONUT"
+            ,"last_name": "MIRON"
+            ,"birth_date": "10-Sep-90"
+            ,"CNP": "1900910044880"
+        },
+        "same_person": True
+    },
+    {
+        "id_image": "test_images/test_id_6.jpg",
+        "selfie_image": "test_images/test_selfie_8.jpg",
+        "expected_ocr_fields": {
+            "first_name": "RALUCA IOANA"
+            ,"last_name": "DUMITRU"
+            ,"birth_date": "03-Jan-90"
+            ,"CNP": "2900103294726"
+        },
+        "same_person": False
+    },
+    {
+        "id_image": "test_images/test_id_8.jpg",
+        "selfie_image": "test_images/test_selfie_8.jpg",
+        "expected_ocr_fields": {
+            "first_name": "MARIANA"
+            ,"last_name": "DUMITRU"
+            ,"birth_date": "14-Jan-69"
+            ,"CNP": "2690114297310"
+        },
+        "same_person": True
+    },
+    {
+        "id_image": "test_images/test_id_9.jpg",
+        "selfie_image": "test_images/test_selfie_9.jpg",
+        "expected_ocr_fields": {
+            "first_name": "TEODORA"
+            ,"last_name": "MIRON"
+            ,"birth_date": "26-Oct-87"
+            ,"CNP": "2871026044912"
+        },
+        "same_person": True
     }
 
 ]
@@ -400,3 +502,56 @@ if __name__ == "__main__":
     print("\n=== KPI RESULTS (In-Memory) ===")
     print(json.dumps(kpi_results, indent=2))
     print("\nFinished KPI Testing.")
+
+    tp = kpi_results["verification_stats"]["TP"]
+    tn = kpi_results["verification_stats"]["TN"]
+    fp = kpi_results["verification_stats"]["FP"]
+    fn = kpi_results["verification_stats"]["FN"]
+
+    data = np.array([[tp, fp], [fn, tn]])
+    labels = np.array([['TP', 'FP'], ['FN', 'TN']])
+
+    plt.figure(figsize=(8, 6))
+    sns.heatmap(data, annot=data, fmt='d', cmap='Blues', cbar_kws={'label': 'Count'})
+    plt.xlabel('Predicted')
+    plt.ylabel('Actual')
+    plt.title('KPI Results')
+    plt.savefig('test/kpi_results.png')
+    plt.show()
+
+    ocr_cer_stats = {
+        "first_name": [],
+        "last_name": [],
+        "birth_date": [],
+        "CNP": []
+    }
+
+    distances = []
+    
+    for sample in kpi_results['samples']:
+        ocr_cer = sample['ocr_cer']
+        ocr_cer_stats["first_name"].append(ocr_cer["first_name"])
+        ocr_cer_stats["last_name"].append(ocr_cer["last_name"])
+        ocr_cer_stats["birth_date"].append(ocr_cer["birth_date"])
+        ocr_cer_stats["CNP"].append(ocr_cer["CNP"])
+        distances.append(sample['face_verification']['verification_result']['distance'])
+
+    averages = {key: sum(values) / len(values) for key, values in ocr_cer_stats.items()}
+
+
+    # Plotting all values
+    fig, ax = plt.subplots()
+    ax.boxplot(ocr_cer_stats.values(), labels=ocr_cer_stats.keys())
+    ax.set_title('OCR CER Values Distribution')
+    ax.set_xlabel('Fields')
+    ax.set_ylabel('CER Values')
+    plt.savefig('test/ocr_cer_values.png')
+    plt.show()
+
+    # Plotting face verification distances
+    plt.plot(distances, color='blue', marker='o')
+    plt.title('Face Verification Distances Over Samples')
+    plt.xlabel('Sample Index')
+    plt.ylabel('Distance')
+    plt.savefig('test/face_verification_distances.png')
+    plt.show()
