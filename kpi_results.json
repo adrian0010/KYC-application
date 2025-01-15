@@ -1,0 +1,198 @@
+{
+  "samples": [
+    {
+      "sample_index": 1,
+      "id_image": "test_images/test_id_1.jpg",
+      "selfie_image": "test_images/test_selfie_1.jpg",
+      "ground_truth_ocr": {
+        "first_name": "ELENA",
+        "last_name": "VASILESCU",
+        "birth_date": "15-Apr-41",
+        "CNP": "2410415400342"
+      },
+      "recognized_ocr": {
+        "first_name": "ELENA",
+        "last_name": "VASILESCU",
+        "birth_date": "15-Apr-41",
+        "CNP": "2410415400342"
+      },
+      "ocr_cer": {
+        "first_name": 0.0,
+        "last_name": 0.0,
+        "birth_date": 0.0,
+        "CNP": 0.0
+      },
+      "face_verification": {
+        "same_person_ground_truth": true,
+        "verification_result": {
+          "verified": true,
+          "distance": 0.030342063075930792,
+          "threshold": 0.4,
+          "model": "Facenet",
+          "detector_backend": "opencv",
+          "similarity_metric": "cosine",
+          "facial_areas": {
+            "img1": {
+              "x": 0,
+              "y": 0,
+              "w": 43,
+              "h": 56,
+              "left_eye": null,
+              "right_eye": null
+            },
+            "img2": {
+              "x": 0,
+              "y": 4,
+              "w": 174,
+              "h": 224,
+              "left_eye": [
+                133,
+                90
+              ],
+              "right_eye": [
+                46,
+                92
+              ]
+            }
+          },
+          "time": 4.99
+        },
+        "verified": true
+      }
+    },
+    {
+      "sample_index": 2,
+      "id_image": "test_images/test_id_2.jpg",
+      "selfie_image": "test_images/test_selfie_2.jpg",
+      "ground_truth_ocr": {
+        "first_name": "CRISTIAN CONSTANTIN",
+        "last_name": "BALEA",
+        "birth_date": "01-May-02",
+        "CNP": "5020501015564"
+      },
+      "recognized_ocr": {
+        "first_name": "CRISTIAN CONSTANTIN",
+        "last_name": "BALEA",
+        "birth_date": "01-May-02",
+        "CNP": "5020501015564"
+      },
+      "ocr_cer": {
+        "first_name": 0.0,
+        "last_name": 0.0,
+        "birth_date": 0.0,
+        "CNP": 0.0
+      },
+      "face_verification": {
+        "same_person_ground_truth": true,
+        "verification_result": {
+          "verified": true,
+          "distance": 0.05541829251417629,
+          "threshold": 0.4,
+          "model": "Facenet",
+          "detector_backend": "opencv",
+          "similarity_metric": "cosine",
+          "facial_areas": {
+            "img1": {
+              "x": 0,
+              "y": 9,
+              "w": 106,
+              "h": 120,
+              "left_eye": [
+                80,
+                55
+              ],
+              "right_eye": [
+                30,
+                57
+              ]
+            },
+            "img2": {
+              "x": 0,
+              "y": 19,
+              "w": 203,
+              "h": 229,
+              "left_eye": [
+                155,
+                106
+              ],
+              "right_eye": [
+                58,
+                110
+              ]
+            }
+          },
+          "time": 0.69
+        },
+        "verified": true
+      }
+    },
+    {
+      "sample_index": 3,
+      "id_image": "test_images/test_id_3.jpg",
+      "selfie_image": "test_images/test_selfie_3.jpg",
+      "ground_truth_ocr": {
+        "first_name": "GICU ROMEO",
+        "last_name": "TITA",
+        "birth_date": "22-Feb-62",
+        "CNP": "1620222400084"
+      },
+      "recognized_ocr": {
+        "first_name": "GICU ROMEO",
+        "last_name": "TITA",
+        "birth_date": "22-Feb-62",
+        "CNP": "1620222400084"
+      },
+      "ocr_cer": {
+        "first_name": 0.0,
+        "last_name": 0.0,
+        "birth_date": 0.0,
+        "CNP": 0.0
+      },
+      "face_verification": {
+        "same_person_ground_truth": false,
+        "verification_result": {
+          "verified": false,
+          "distance": 0.8022607270492343,
+          "threshold": 0.4,
+          "model": "Facenet",
+          "detector_backend": "opencv",
+          "similarity_metric": "cosine",
+          "facial_areas": {
+            "img1": {
+              "x": 0,
+              "y": 0,
+              "w": 97,
+              "h": 138,
+              "left_eye": null,
+              "right_eye": null
+            },
+            "img2": {
+              "x": 0,
+              "y": 23,
+              "w": 209,
+              "h": 253,
+              "left_eye": [
+                141,
+                119
+              ],
+              "right_eye": [
+                42,
+                125
+              ]
+            }
+          },
+          "time": 0.67
+        },
+        "verified": false
+      }
+    }
+  ],
+  "verification_stats": {
+    "TP": 2,
+    "TN": 1,
+    "FP": 0,
+    "FN": 0,
+    "FAR": 0.0,
+    "FRR": 0.0
+  }
+}
