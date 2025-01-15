@@ -13,12 +13,12 @@ KYC-application
 ├── app_v1
 │   ├── main.py                 # Main Streamlit application script
 │   └── temp                    # Temporary directory for storing images
+├── deepface_env                # Virtual environment for DeepFace
 ├── FaceRecognition
 │   ├── DeepFace.py             # DeepFace related code
 │   ├── face_detection_mtcnn.py # Face detection using MTCNN
 │   ├── face_verification_deepface.py # Face verification using DeepFace
-│   ├── ImagePreprocess.py      # Image preprocessing code
-│   └── main copy.py            # Backup of the main script
+│   └── ImagePreprocess.py      # Image preprocessing code
 ├── images                      # Directory for storing images
 ├── kpi_results.json            # JSON file for storing KPI results
 ├── OCR
@@ -48,6 +48,21 @@ The project uses the following OCR tools:
 3. **PaddleOCR**: An OCR library developed by PaddlePaddle.
 4. **Pytesseract**: A Python wrapper for Google's Tesseract-OCR Engine.
 
+## Face Recognition
+
+The project uses the following tools for face recognition:
+
+1. **MTCNN**: A face detection tool that uses Multi-task Cascaded Convolutional Networks.
+2. **DeepFace**: A facial recognition and facial attribute analysis framework.
+
+### Face Detection
+
+The face detection process uses MTCNN to detect faces in the provided images. The detected faces are then processed and verified using DeepFace.
+
+### Face Verification
+
+The face verification process uses DeepFace to compare the detected faces from the ID image and the selfie image to determine if they belong to the same person.
+
 ## Installation
 
 1. Clone the repository:
@@ -76,11 +91,12 @@ To run the Streamlit application:
 streamlit run app_v1/main.py
 ```
 
-### Running the EasyOCR Script
+### Running the Flask Application
 
-To run the EasyOCR script:
+To run the Flask application:
 ```sh
-python OCR/EasyOCR.py
+cd app/kyc-app
+flask run
 ```
 
 ### Running the KPI Tests
