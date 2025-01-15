@@ -146,6 +146,141 @@ test_data = [
             ,"CNP": "2871026044912"
         },
         "same_person": True
+    },
+    {
+        "id_image": "test_images/test_id_10.jpg",
+        "selfie_image": "test_images/test_selfie_10.jpg",
+        "expected_ocr_fields": {
+            "first_name": "SILVIU CRISTIAN"
+            ,"last_name": "STAN"
+            ,"birth_date": "11-Dec-83"
+            ,"CNP": "1831211379814"
+        },
+        "same_person": True
+    },
+    {
+        "id_image": "test_images/test_id_11.jpg",
+        "selfie_image": "test_images/test_selfie_11.jpg",
+        "expected_ocr_fields": {
+            "first_name": "IOAN"
+            ,"last_name": "LEUCA"
+            ,"birth_date": "09-Mar-67"
+            ,"CNP": "1670309060760"
+        },
+        "same_person": True
+    },
+    {
+        "id_image": "test_images/test_id_12.jpg",
+        "selfie_image": "test_images/test_selfie_12.jpg",
+        "expected_ocr_fields": {
+            "first_name": "MARGARETA"
+            ,"last_name": "GHERCHINA"
+            ,"birth_date": "07-Oct-57"
+            ,"CNP": "2571007131247"
+        },
+        "same_person": True
+    },
+    {
+        # Flipped selfie
+        "id_image": "test_images/test_id_13.jpg",
+        "selfie_image": "test_images/test_selfie_13.jpg",
+        "expected_ocr_fields": {
+            "first_name": "CRINA ELEONORA"
+            ,"last_name": "COSTEA"
+            ,"birth_date": "02-May-72"
+            ,"CNP": "2720502354786"
+        },
+        "same_person": True
+    },
+    {
+        # Flipped selfie
+        "id_image": "test_images/test_id_14.jpg",
+        "selfie_image": "test_images/test_selfie_14.jpg",
+        "expected_ocr_fields": {
+            "first_name": "PAULA NICOLETA"
+            ,"last_name": "BODEA"
+            ,"birth_date": "07-Feb-06"
+            ,"CNP": "6060207313521"
+        },
+        "same_person": True
+    },
+    {
+        "id_image": "test_images/test_id_15.jpg",
+        "selfie_image": "test_images/test_selfie_15.jpg",
+        "expected_ocr_fields": {
+            "first_name": "MADALINA CRISTINA"
+            ,"last_name": "COCA"
+            ,"birth_date": "15-Apr-01"
+            ,"CNP": "6010415280852"
+        },
+        "same_person": True
+    },
+    {
+        "id_image": "test_images/test_id_15.jpg",
+        "selfie_image": "test_images/test_selfie_14.jpg",
+        "expected_ocr_fields": {
+            "first_name": "MADALINA CRISTINA"
+            ,"last_name": "COCA"
+            ,"birth_date": "15-Apr-01"
+            ,"CNP": "6010415280852"
+        },
+        "same_person": False
+    },
+    {
+        "id_image": "test_images/test_id_13.jpg",
+        "selfie_image": "test_images/test_selfie_6.jpg",
+        "expected_ocr_fields": {
+            "first_name": "CRINA ELEONORA"
+            ,"last_name": "COSTEA"
+            ,"birth_date": "02-May-72"
+            ,"CNP": "2720502354786"
+        },
+        "same_person": False
+    },
+    {
+        "id_image": "test_images/test_id_12.jpg",
+        "selfie_image": "test_images/test_selfie_8.jpg",
+        "expected_ocr_fields": {
+            "first_name": "MARGARETA"
+            ,"last_name": "GHERCHINA"
+            ,"birth_date": "07-Oct-57"
+            ,"CNP": "2571007131247"
+        },
+        "same_person": False
+    },
+    {
+        "id_image": "test_images/test_id_9.jpg",
+        "selfie_image": "test_images/test_selfie_12.jpg",
+        "expected_ocr_fields": {
+            "first_name": "TEODORA"
+            ,"last_name": "MIRON"
+            ,"birth_date": "26-Oct-87"
+            ,"CNP": "2871026044912"
+        },
+        "same_person": False
+    },
+    {
+        # Image is not clear enough
+        "id_image": "test_images/test_id_7.jpg",
+        "selfie_image": "test_images/test_selfie_11.jpg",
+        "expected_ocr_fields": {
+            "first_name": "CATALIN IONUT"
+            ,"last_name": "MIRON"
+            ,"birth_date": "10-Sep-90"
+            ,"CNP": "1900910044880"
+        },
+        "same_person": False
+    },
+    {
+        "id_image": "test_images/test_id_10.jpg",
+        "selfie_image": "test_images/test_selfie_9.jpg",
+        "expected_ocr_fields": {
+            "first_name": "SILVIU CRISTIAN"
+            ,"last_name": "STAN"
+            ,"birth_date": "11-Dec-83"
+            ,"CNP": "1831211379814"
+        },
+        "same_person": False
     }
 
 ]
@@ -515,7 +650,7 @@ if __name__ == "__main__":
     sns.heatmap(data, annot=data, fmt='d', cmap='Blues', cbar_kws={'label': 'Count'})
     plt.xlabel('Predicted')
     plt.ylabel('Actual')
-    plt.title('KPI Results')
+    plt.title('Confusion Matrix')
     plt.savefig('test/kpi_results.png')
     plt.show()
 
@@ -542,7 +677,7 @@ if __name__ == "__main__":
     # Plotting all values
     fig, ax = plt.subplots()
     ax.boxplot(ocr_cer_stats.values(), labels=ocr_cer_stats.keys())
-    ax.set_title('OCR CER Values Distribution')
+    ax.set_title('OCR Character Error Rate')
     ax.set_xlabel('Fields')
     ax.set_ylabel('CER Values')
     plt.savefig('test/ocr_cer_values.png')
@@ -550,7 +685,7 @@ if __name__ == "__main__":
 
     # Plotting face verification distances
     plt.plot(distances, color='blue', marker='o')
-    plt.title('Face Verification Distances Over Samples')
+    plt.title('Face Verification Distances')
     plt.xlabel('Sample Index')
     plt.ylabel('Distance')
     plt.savefig('test/face_verification_distances.png')

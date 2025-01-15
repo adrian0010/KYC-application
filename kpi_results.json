@@ -26,7 +26,7 @@
         "same_person_ground_truth": true,
         "verification_result": {
           "verified": true,
-          "distance": 0.030342063075930792,
+          "distance": 0.030342109955975416,
           "threshold": 0.4,
           "model": "Facenet",
           "detector_backend": "opencv",
@@ -55,7 +55,7 @@
               ]
             }
           },
-          "time": 4.99
+          "time": 4.58
         },
         "verified": true
       }
@@ -86,7 +86,7 @@
         "same_person_ground_truth": true,
         "verification_result": {
           "verified": true,
-          "distance": 0.05541829251417629,
+          "distance": 0.05541831224231075,
           "threshold": 0.4,
           "model": "Facenet",
           "detector_backend": "opencv",
@@ -121,7 +121,7 @@
               ]
             }
           },
-          "time": 0.69
+          "time": 0.72
         },
         "verified": true
       }
@@ -152,7 +152,7 @@
         "same_person_ground_truth": false,
         "verification_result": {
           "verified": false,
-          "distance": 0.8022607270492343,
+          "distance": 0.8022606785286028,
           "threshold": 0.4,
           "model": "Facenet",
           "detector_backend": "opencv",
@@ -181,15 +181,1347 @@
               ]
             }
           },
+          "time": 0.77
+        },
+        "verified": false
+      }
+    },
+    {
+      "sample_index": 4,
+      "id_image": "test_images/test_id_4.jpg",
+      "selfie_image": "test_images/test_selfie_4.jpg",
+      "ground_truth_ocr": {
+        "first_name": "ANDREI",
+        "last_name": "BARTA",
+        "birth_date": "05-Jul-82",
+        "CNP": "1820705303972"
+      },
+      "recognized_ocr": {
+        "first_name": "ANDREI",
+        "last_name": "BARTA",
+        "birth_date": "05-Jul-82",
+        "CNP": "1820705303972"
+      },
+      "ocr_cer": {
+        "first_name": 0.0,
+        "last_name": 0.0,
+        "birth_date": 0.0,
+        "CNP": 0.0
+      },
+      "face_verification": {
+        "same_person_ground_truth": true,
+        "verification_result": {
+          "verified": true,
+          "distance": 0.05460515098043828,
+          "threshold": 0.4,
+          "model": "Facenet",
+          "detector_backend": "opencv",
+          "similarity_metric": "cosine",
+          "facial_areas": {
+            "img1": {
+              "x": 0,
+              "y": 7,
+              "w": 87,
+              "h": 100,
+              "left_eye": [
+                67,
+                45
+              ],
+              "right_eye": [
+                27,
+                45
+              ]
+            },
+            "img2": {
+              "x": 0,
+              "y": 6,
+              "w": 86,
+              "h": 99,
+              "left_eye": [
+                65,
+                44
+              ],
+              "right_eye": [
+                26,
+                43
+              ]
+            }
+          },
+          "time": 0.89
+        },
+        "verified": true
+      }
+    },
+    {
+      "sample_index": 5,
+      "id_image": "test_images/test_id_5.jpg",
+      "selfie_image": "test_images/test_selfie_5.jpg",
+      "ground_truth_ocr": {
+        "first_name": "LAVINIA SIMONA",
+        "last_name": "AILOAIEI",
+        "birth_date": "19-Jul-95",
+        "CNP": "2950719070025"
+      },
+      "recognized_ocr": {
+        "first_name": "LAVINIA SIMONA",
+        "last_name": "AILOAIEI",
+        "birth_date": "19-Jul-95",
+        "CNP": "2950719070025"
+      },
+      "ocr_cer": {
+        "first_name": 0.0,
+        "last_name": 0.0,
+        "birth_date": 0.0,
+        "CNP": 0.0
+      },
+      "face_verification": {
+        "same_person_ground_truth": true,
+        "verification_result": {
+          "verified": true,
+          "distance": 0.0149564304223202,
+          "threshold": 0.4,
+          "model": "Facenet",
+          "detector_backend": "opencv",
+          "similarity_metric": "cosine",
+          "facial_areas": {
+            "img1": {
+              "x": 0,
+              "y": 30,
+              "w": 352,
+              "h": 453,
+              "left_eye": [
+                276,
+                199
+              ],
+              "right_eye": [
+                105,
+                197
+              ]
+            },
+            "img2": {
+              "x": 0,
+              "y": 37,
+              "w": 346,
+              "h": 440,
+              "left_eye": [
+                272,
+                197
+              ],
+              "right_eye": [
+                99,
+                195
+              ]
+            }
+          },
+          "time": 1.11
+        },
+        "verified": true
+      }
+    },
+    {
+      "sample_index": 6,
+      "id_image": "test_images/test_id_6.jpg",
+      "selfie_image": "test_images/test_selfie_6.jpg",
+      "ground_truth_ocr": {
+        "first_name": "RALUCA IOANA",
+        "last_name": "DUMITRU",
+        "birth_date": "03-Jan-90",
+        "CNP": "2900103294726"
+      },
+      "recognized_ocr": {
+        "first_name": "RALUCA IOANA",
+        "last_name": "DUMITRU",
+        "birth_date": "03-Jan-90",
+        "CNP": "2900103294726"
+      },
+      "ocr_cer": {
+        "first_name": 0.0,
+        "last_name": 0.0,
+        "birth_date": 0.0,
+        "CNP": 0.0
+      },
+      "face_verification": {
+        "same_person_ground_truth": true,
+        "verification_result": {
+          "verified": true,
+          "distance": 0.010887401786361273,
+          "threshold": 0.4,
+          "model": "Facenet",
+          "detector_backend": "opencv",
+          "similarity_metric": "cosine",
+          "facial_areas": {
+            "img1": {
+              "x": 0,
+              "y": 0,
+              "w": 89,
+              "h": 105,
+              "left_eye": [
+                71,
+                42
+              ],
+              "right_eye": [
+                25,
+                40
+              ]
+            },
+            "img2": {
+              "x": 0,
+              "y": 0,
+              "w": 89,
+              "h": 106,
+              "left_eye": [
+                72,
+                42
+              ],
+              "right_eye": [
+                24,
+                40
+              ]
+            }
+          },
+          "time": 0.64
+        },
+        "verified": true
+      }
+    },
+    {
+      "sample_index": 7,
+      "id_image": "test_images/test_id_6.jpg",
+      "selfie_image": "test_images/test_selfie_5.jpg",
+      "ground_truth_ocr": {
+        "first_name": "RALUCA IOANA",
+        "last_name": "DUMITRU",
+        "birth_date": "03-Jan-90",
+        "CNP": "2900103294726"
+      },
+      "recognized_ocr": {
+        "first_name": "RALUCA IOANA",
+        "last_name": "DUMITRU",
+        "birth_date": "03-Jan-90",
+        "CNP": "2900103294726"
+      },
+      "ocr_cer": {
+        "first_name": 0.0,
+        "last_name": 0.0,
+        "birth_date": 0.0,
+        "CNP": 0.0
+      },
+      "face_verification": {
+        "same_person_ground_truth": false,
+        "verification_result": {
+          "verified": false,
+          "distance": 0.6396447506309031,
+          "threshold": 0.4,
+          "model": "Facenet",
+          "detector_backend": "opencv",
+          "similarity_metric": "cosine",
+          "facial_areas": {
+            "img1": {
+              "x": 0,
+              "y": 0,
+              "w": 89,
+              "h": 105,
+              "left_eye": [
+                71,
+                42
+              ],
+              "right_eye": [
+                25,
+                40
+              ]
+            },
+            "img2": {
+              "x": 0,
+              "y": 37,
+              "w": 346,
+              "h": 440,
+              "left_eye": [
+                272,
+                197
+              ],
+              "right_eye": [
+                99,
+                195
+              ]
+            }
+          },
+          "time": 0.96
+        },
+        "verified": false
+      }
+    },
+    {
+      "sample_index": 8,
+      "id_image": "test_images/test_id_1.jpg",
+      "selfie_image": "test_images/test_selfie_5.jpg",
+      "ground_truth_ocr": {
+        "first_name": "ELENA",
+        "last_name": "VASILESCU",
+        "birth_date": "15-Apr-41",
+        "CNP": "2410415400342"
+      },
+      "recognized_ocr": {
+        "first_name": "ELENA",
+        "last_name": "VASILESCU",
+        "birth_date": "15-Apr-41",
+        "CNP": "2410415400342"
+      },
+      "ocr_cer": {
+        "first_name": 0.0,
+        "last_name": 0.0,
+        "birth_date": 0.0,
+        "CNP": 0.0
+      },
+      "face_verification": {
+        "same_person_ground_truth": false,
+        "verification_result": {
+          "verified": false,
+          "distance": 1.085115854925688,
+          "threshold": 0.4,
+          "model": "Facenet",
+          "detector_backend": "opencv",
+          "similarity_metric": "cosine",
+          "facial_areas": {
+            "img1": {
+              "x": 0,
+              "y": 0,
+              "w": 43,
+              "h": 56,
+              "left_eye": null,
+              "right_eye": null
+            },
+            "img2": {
+              "x": 0,
+              "y": 37,
+              "w": 346,
+              "h": 440,
+              "left_eye": [
+                272,
+                197
+              ],
+              "right_eye": [
+                99,
+                195
+              ]
+            }
+          },
+          "time": 0.8
+        },
+        "verified": false
+      }
+    },
+    {
+      "sample_index": 9,
+      "id_image": "test_images/test_id_7.jpg",
+      "selfie_image": "test_images/test_selfie_7.jpg",
+      "ground_truth_ocr": {
+        "first_name": "CATALIN IONUT",
+        "last_name": "MIRON",
+        "birth_date": "10-Sep-90",
+        "CNP": "1900910044880"
+      },
+      "recognized_ocr": {
+        "first_name": "",
+        "last_name": "",
+        "birth_date": "",
+        "CNP": ""
+      },
+      "ocr_cer": {
+        "first_name": 13,
+        "last_name": 5,
+        "birth_date": 9,
+        "CNP": 13
+      },
+      "face_verification": {
+        "same_person_ground_truth": true,
+        "verification_result": {
+          "verified": true,
+          "distance": 0.0291288177528507,
+          "threshold": 0.4,
+          "model": "Facenet",
+          "detector_backend": "opencv",
+          "similarity_metric": "cosine",
+          "facial_areas": {
+            "img1": {
+              "x": 0,
+              "y": 5,
+              "w": 60,
+              "h": 69,
+              "left_eye": [
+                44,
+                30
+              ],
+              "right_eye": [
+                20,
+                31
+              ]
+            },
+            "img2": {
+              "x": 0,
+              "y": 4,
+              "w": 59,
+              "h": 70,
+              "left_eye": null,
+              "right_eye": null
+            }
+          },
+          "time": 0.62
+        },
+        "verified": true
+      }
+    },
+    {
+      "sample_index": 10,
+      "id_image": "test_images/test_id_6.jpg",
+      "selfie_image": "test_images/test_selfie_8.jpg",
+      "ground_truth_ocr": {
+        "first_name": "RALUCA IOANA",
+        "last_name": "DUMITRU",
+        "birth_date": "03-Jan-90",
+        "CNP": "2900103294726"
+      },
+      "recognized_ocr": {
+        "first_name": "RALUCA IOANA",
+        "last_name": "DUMITRU",
+        "birth_date": "03-Jan-90",
+        "CNP": "2900103294726"
+      },
+      "ocr_cer": {
+        "first_name": 0.0,
+        "last_name": 0.0,
+        "birth_date": 0.0,
+        "CNP": 0.0
+      },
+      "face_verification": {
+        "same_person_ground_truth": false,
+        "verification_result": {
+          "verified": false,
+          "distance": 0.9036668987768599,
+          "threshold": 0.4,
+          "model": "Facenet",
+          "detector_backend": "opencv",
+          "similarity_metric": "cosine",
+          "facial_areas": {
+            "img1": {
+              "x": 0,
+              "y": 0,
+              "w": 89,
+              "h": 105,
+              "left_eye": [
+                71,
+                42
+              ],
+              "right_eye": [
+                25,
+                40
+              ]
+            },
+            "img2": {
+              "x": 0,
+              "y": 0,
+              "w": 99,
+              "h": 116,
+              "left_eye": [
+                76,
+                40
+              ],
+              "right_eye": [
+                30,
+                42
+              ]
+            }
+          },
+          "time": 0.83
+        },
+        "verified": false
+      }
+    },
+    {
+      "sample_index": 11,
+      "id_image": "test_images/test_id_8.jpg",
+      "selfie_image": "test_images/test_selfie_8.jpg",
+      "ground_truth_ocr": {
+        "first_name": "MARIANA",
+        "last_name": "DUMITRU",
+        "birth_date": "14-Jan-69",
+        "CNP": "2690114297310"
+      },
+      "recognized_ocr": {
+        "first_name": "MARIANA",
+        "last_name": "DUMITRU",
+        "birth_date": "14-Jan-69",
+        "CNP": "2690114297310"
+      },
+      "ocr_cer": {
+        "first_name": 0.0,
+        "last_name": 0.0,
+        "birth_date": 0.0,
+        "CNP": 0.0
+      },
+      "face_verification": {
+        "same_person_ground_truth": true,
+        "verification_result": {
+          "verified": true,
+          "distance": 0.10458630031550209,
+          "threshold": 0.4,
+          "model": "Facenet",
+          "detector_backend": "opencv",
+          "similarity_metric": "cosine",
+          "facial_areas": {
+            "img1": {
+              "x": 0,
+              "y": 0,
+              "w": 100,
+              "h": 115,
+              "left_eye": [
+                79,
+                44
+              ],
+              "right_eye": [
+                32,
+                43
+              ]
+            },
+            "img2": {
+              "x": 0,
+              "y": 0,
+              "w": 99,
+              "h": 116,
+              "left_eye": [
+                76,
+                40
+              ],
+              "right_eye": [
+                30,
+                42
+              ]
+            }
+          },
           "time": 0.67
+        },
+        "verified": true
+      }
+    },
+    {
+      "sample_index": 12,
+      "id_image": "test_images/test_id_9.jpg",
+      "selfie_image": "test_images/test_selfie_9.jpg",
+      "ground_truth_ocr": {
+        "first_name": "TEODORA",
+        "last_name": "MIRON",
+        "birth_date": "26-Oct-87",
+        "CNP": "2871026044912"
+      },
+      "recognized_ocr": {
+        "first_name": "TEODORA",
+        "last_name": "MIRON",
+        "birth_date": "26-Oct-87",
+        "CNP": "2871026044912"
+      },
+      "ocr_cer": {
+        "first_name": 0.0,
+        "last_name": 0.0,
+        "birth_date": 0.0,
+        "CNP": 0.0
+      },
+      "face_verification": {
+        "same_person_ground_truth": true,
+        "verification_result": {
+          "verified": true,
+          "distance": 0.06406629612462678,
+          "threshold": 0.4,
+          "model": "Facenet",
+          "detector_backend": "opencv",
+          "similarity_metric": "cosine",
+          "facial_areas": {
+            "img1": {
+              "x": 0,
+              "y": 0,
+              "w": 59,
+              "h": 71,
+              "left_eye": [
+                45,
+                26
+              ],
+              "right_eye": [
+                16,
+                27
+              ]
+            },
+            "img2": {
+              "x": 0,
+              "y": 0,
+              "w": 60,
+              "h": 71,
+              "left_eye": [
+                46,
+                25
+              ],
+              "right_eye": [
+                18,
+                27
+              ]
+            }
+          },
+          "time": 0.72
+        },
+        "verified": true
+      }
+    },
+    {
+      "sample_index": 13,
+      "id_image": "test_images/test_id_10.jpg",
+      "selfie_image": "test_images/test_selfie_10.jpg",
+      "ground_truth_ocr": {
+        "first_name": "SILVIU CRISTIAN",
+        "last_name": "STAN",
+        "birth_date": "11-Dec-83",
+        "CNP": "1831211379814"
+      },
+      "recognized_ocr": {
+        "first_name": "SILVIU CRISTIAN",
+        "last_name": "STAN",
+        "birth_date": "11-Dec-83",
+        "CNP": "1831211379814"
+      },
+      "ocr_cer": {
+        "first_name": 0.0,
+        "last_name": 0.0,
+        "birth_date": 0.0,
+        "CNP": 0.0
+      },
+      "face_verification": {
+        "same_person_ground_truth": true,
+        "verification_result": {
+          "verified": true,
+          "distance": 0.33582910460368653,
+          "threshold": 0.4,
+          "model": "Facenet",
+          "detector_backend": "opencv",
+          "similarity_metric": "cosine",
+          "facial_areas": {
+            "img1": {
+              "x": 0,
+              "y": 3,
+              "w": 47,
+              "h": 58,
+              "left_eye": null,
+              "right_eye": null
+            },
+            "img2": {
+              "x": 0,
+              "y": 1,
+              "w": 46,
+              "h": 57,
+              "left_eye": null,
+              "right_eye": null
+            }
+          },
+          "time": 0.62
+        },
+        "verified": true
+      }
+    },
+    {
+      "sample_index": 14,
+      "id_image": "test_images/test_id_11.jpg",
+      "selfie_image": "test_images/test_selfie_11.jpg",
+      "ground_truth_ocr": {
+        "first_name": "IOAN",
+        "last_name": "LEUCA",
+        "birth_date": "09-Mar-67",
+        "CNP": "1670309060760"
+      },
+      "recognized_ocr": {
+        "first_name": "IOAN",
+        "last_name": "LEUCA",
+        "birth_date": "09-Mar-67",
+        "CNP": "1670309060760"
+      },
+      "ocr_cer": {
+        "first_name": 0.0,
+        "last_name": 0.0,
+        "birth_date": 0.0,
+        "CNP": 0.0
+      },
+      "face_verification": {
+        "same_person_ground_truth": true,
+        "verification_result": {
+          "verified": true,
+          "distance": 0.04745291395024953,
+          "threshold": 0.4,
+          "model": "Facenet",
+          "detector_backend": "opencv",
+          "similarity_metric": "cosine",
+          "facial_areas": {
+            "img1": {
+              "x": 2,
+              "y": 13,
+              "w": 100,
+              "h": 108,
+              "left_eye": [
+                76,
+                52
+              ],
+              "right_eye": [
+                29,
+                51
+              ]
+            },
+            "img2": {
+              "x": 0,
+              "y": 12,
+              "w": 100,
+              "h": 107,
+              "left_eye": [
+                72,
+                50
+              ],
+              "right_eye": [
+                31,
+                51
+              ]
+            }
+          },
+          "time": 0.69
+        },
+        "verified": true
+      }
+    },
+    {
+      "sample_index": 15,
+      "id_image": "test_images/test_id_12.jpg",
+      "selfie_image": "test_images/test_selfie_12.jpg",
+      "ground_truth_ocr": {
+        "first_name": "MARGARETA",
+        "last_name": "GHERCHINA",
+        "birth_date": "07-Oct-57",
+        "CNP": "2571007131247"
+      },
+      "recognized_ocr": {
+        "first_name": "MARGARETA",
+        "last_name": "GHERGHINA",
+        "birth_date": "07-Oct-57",
+        "CNP": "2571007131247"
+      },
+      "ocr_cer": {
+        "first_name": 0.0,
+        "last_name": 0.1111111111111111,
+        "birth_date": 0.0,
+        "CNP": 0.0
+      },
+      "face_verification": {
+        "same_person_ground_truth": true,
+        "verification_result": {
+          "verified": true,
+          "distance": 0.06494027614511688,
+          "threshold": 0.4,
+          "model": "Facenet",
+          "detector_backend": "opencv",
+          "similarity_metric": "cosine",
+          "facial_areas": {
+            "img1": {
+              "x": 0,
+              "y": 16,
+              "w": 207,
+              "h": 238,
+              "left_eye": null,
+              "right_eye": null
+            },
+            "img2": {
+              "x": 0,
+              "y": 16,
+              "w": 204,
+              "h": 227,
+              "left_eye": null,
+              "right_eye": null
+            }
+          },
+          "time": 0.76
+        },
+        "verified": true
+      }
+    },
+    {
+      "sample_index": 16,
+      "id_image": "test_images/test_id_13.jpg",
+      "selfie_image": "test_images/test_selfie_13.jpg",
+      "ground_truth_ocr": {
+        "first_name": "CRINA ELEONORA",
+        "last_name": "COSTEA",
+        "birth_date": "02-May-72",
+        "CNP": "2720502354786"
+      },
+      "recognized_ocr": {
+        "first_name": "CRINA ELEONORA",
+        "last_name": "COSTEA",
+        "birth_date": "02-May-72",
+        "CNP": "2720502354786"
+      },
+      "ocr_cer": {
+        "first_name": 0.0,
+        "last_name": 0.0,
+        "birth_date": 0.0,
+        "CNP": 0.0
+      },
+      "face_verification": {
+        "same_person_ground_truth": true,
+        "verification_result": {
+          "verified": true,
+          "distance": 0.034036207574882904,
+          "threshold": 0.4,
+          "model": "Facenet",
+          "detector_backend": "opencv",
+          "similarity_metric": "cosine",
+          "facial_areas": {
+            "img1": {
+              "x": 0,
+              "y": 2,
+              "w": 91,
+              "h": 113,
+              "left_eye": [
+                69,
+                44
+              ],
+              "right_eye": [
+                27,
+                46
+              ]
+            },
+            "img2": {
+              "x": 0,
+              "y": 1,
+              "w": 89,
+              "h": 112,
+              "left_eye": [
+                68,
+                44
+              ],
+              "right_eye": [
+                26,
+                42
+              ]
+            }
+          },
+          "time": 0.63
+        },
+        "verified": true
+      }
+    },
+    {
+      "sample_index": 17,
+      "id_image": "test_images/test_id_14.jpg",
+      "selfie_image": "test_images/test_selfie_14.jpg",
+      "ground_truth_ocr": {
+        "first_name": "PAULA NICOLETA",
+        "last_name": "BODEA",
+        "birth_date": "07-Feb-06",
+        "CNP": "6060207313521"
+      },
+      "recognized_ocr": {
+        "first_name": "PAULA NICOLETA",
+        "last_name": "BODEA",
+        "birth_date": "07-Feb-06",
+        "CNP": "6060207313521"
+      },
+      "ocr_cer": {
+        "first_name": 0.0,
+        "last_name": 0.0,
+        "birth_date": 0.0,
+        "CNP": 0.0
+      },
+      "face_verification": {
+        "same_person_ground_truth": true,
+        "verification_result": {
+          "verified": true,
+          "distance": 0.04987586209095296,
+          "threshold": 0.4,
+          "model": "Facenet",
+          "detector_backend": "opencv",
+          "similarity_metric": "cosine",
+          "facial_areas": {
+            "img1": {
+              "x": 0,
+              "y": 2,
+              "w": 84,
+              "h": 114,
+              "left_eye": [
+                61,
+                47
+              ],
+              "right_eye": [
+                21,
+                48
+              ]
+            },
+            "img2": {
+              "x": 0,
+              "y": 1,
+              "w": 82,
+              "h": 112,
+              "left_eye": [
+                61,
+                46
+              ],
+              "right_eye": [
+                20,
+                45
+              ]
+            }
+          },
+          "time": 0.63
+        },
+        "verified": true
+      }
+    },
+    {
+      "sample_index": 18,
+      "id_image": "test_images/test_id_15.jpg",
+      "selfie_image": "test_images/test_selfie_15.jpg",
+      "ground_truth_ocr": {
+        "first_name": "MADALINA CRISTINA",
+        "last_name": "COCA",
+        "birth_date": "15-Apr-01",
+        "CNP": "6010415280852"
+      },
+      "recognized_ocr": {
+        "first_name": "MADALINA CRISTINA",
+        "last_name": "COCA",
+        "birth_date": "15-Apr-01",
+        "CNP": "6010415280852"
+      },
+      "ocr_cer": {
+        "first_name": 0.0,
+        "last_name": 0.0,
+        "birth_date": 0.0,
+        "CNP": 0.0
+      },
+      "face_verification": {
+        "same_person_ground_truth": true,
+        "verification_result": {
+          "verified": true,
+          "distance": 0.021167325064249676,
+          "threshold": 0.4,
+          "model": "Facenet",
+          "detector_backend": "opencv",
+          "similarity_metric": "cosine",
+          "facial_areas": {
+            "img1": {
+              "x": 0,
+              "y": 10,
+              "w": 143,
+              "h": 181,
+              "left_eye": [
+                111,
+                78
+              ],
+              "right_eye": [
+                41,
+                77
+              ]
+            },
+            "img2": {
+              "x": 0,
+              "y": 11,
+              "w": 149,
+              "h": 184,
+              "left_eye": [
+                119,
+                82
+              ],
+              "right_eye": [
+                48,
+                80
+              ]
+            }
+          },
+          "time": 0.72
+        },
+        "verified": true
+      }
+    },
+    {
+      "sample_index": 19,
+      "id_image": "test_images/test_id_15.jpg",
+      "selfie_image": "test_images/test_selfie_14.jpg",
+      "ground_truth_ocr": {
+        "first_name": "MADALINA CRISTINA",
+        "last_name": "COCA",
+        "birth_date": "15-Apr-01",
+        "CNP": "6010415280852"
+      },
+      "recognized_ocr": {
+        "first_name": "MADALINA CRISTINA",
+        "last_name": "COCA",
+        "birth_date": "15-Apr-01",
+        "CNP": "6010415280852"
+      },
+      "ocr_cer": {
+        "first_name": 0.0,
+        "last_name": 0.0,
+        "birth_date": 0.0,
+        "CNP": 0.0
+      },
+      "face_verification": {
+        "same_person_ground_truth": false,
+        "verification_result": {
+          "verified": false,
+          "distance": 1.0018253840416191,
+          "threshold": 0.4,
+          "model": "Facenet",
+          "detector_backend": "opencv",
+          "similarity_metric": "cosine",
+          "facial_areas": {
+            "img1": {
+              "x": 0,
+              "y": 10,
+              "w": 143,
+              "h": 181,
+              "left_eye": [
+                111,
+                78
+              ],
+              "right_eye": [
+                41,
+                77
+              ]
+            },
+            "img2": {
+              "x": 0,
+              "y": 1,
+              "w": 82,
+              "h": 112,
+              "left_eye": [
+                61,
+                46
+              ],
+              "right_eye": [
+                20,
+                45
+              ]
+            }
+          },
+          "time": 0.72
+        },
+        "verified": false
+      }
+    },
+    {
+      "sample_index": 20,
+      "id_image": "test_images/test_id_13.jpg",
+      "selfie_image": "test_images/test_selfie_6.jpg",
+      "ground_truth_ocr": {
+        "first_name": "CRINA ELEONORA",
+        "last_name": "COSTEA",
+        "birth_date": "02-May-72",
+        "CNP": "2720502354786"
+      },
+      "recognized_ocr": {
+        "first_name": "CRINA ELEONORA",
+        "last_name": "COSTEA",
+        "birth_date": "02-May-72",
+        "CNP": "2720502354786"
+      },
+      "ocr_cer": {
+        "first_name": 0.0,
+        "last_name": 0.0,
+        "birth_date": 0.0,
+        "CNP": 0.0
+      },
+      "face_verification": {
+        "same_person_ground_truth": false,
+        "verification_result": {
+          "verified": false,
+          "distance": 0.8057762270526689,
+          "threshold": 0.4,
+          "model": "Facenet",
+          "detector_backend": "opencv",
+          "similarity_metric": "cosine",
+          "facial_areas": {
+            "img1": {
+              "x": 0,
+              "y": 2,
+              "w": 91,
+              "h": 113,
+              "left_eye": [
+                69,
+                44
+              ],
+              "right_eye": [
+                27,
+                46
+              ]
+            },
+            "img2": {
+              "x": 0,
+              "y": 0,
+              "w": 89,
+              "h": 106,
+              "left_eye": [
+                72,
+                42
+              ],
+              "right_eye": [
+                24,
+                40
+              ]
+            }
+          },
+          "time": 0.66
+        },
+        "verified": false
+      }
+    },
+    {
+      "sample_index": 21,
+      "id_image": "test_images/test_id_12.jpg",
+      "selfie_image": "test_images/test_selfie_8.jpg",
+      "ground_truth_ocr": {
+        "first_name": "MARGARETA",
+        "last_name": "GHERCHINA",
+        "birth_date": "07-Oct-57",
+        "CNP": "2571007131247"
+      },
+      "recognized_ocr": {
+        "first_name": "MARGARETA",
+        "last_name": "GHERGHINA",
+        "birth_date": "07-Oct-57",
+        "CNP": "2571007131247"
+      },
+      "ocr_cer": {
+        "first_name": 0.0,
+        "last_name": 0.1111111111111111,
+        "birth_date": 0.0,
+        "CNP": 0.0
+      },
+      "face_verification": {
+        "same_person_ground_truth": false,
+        "verification_result": {
+          "verified": false,
+          "distance": 0.6720734963616762,
+          "threshold": 0.4,
+          "model": "Facenet",
+          "detector_backend": "opencv",
+          "similarity_metric": "cosine",
+          "facial_areas": {
+            "img1": {
+              "x": 0,
+              "y": 16,
+              "w": 207,
+              "h": 238,
+              "left_eye": null,
+              "right_eye": null
+            },
+            "img2": {
+              "x": 0,
+              "y": 0,
+              "w": 99,
+              "h": 116,
+              "left_eye": [
+                76,
+                40
+              ],
+              "right_eye": [
+                30,
+                42
+              ]
+            }
+          },
+          "time": 0.68
+        },
+        "verified": false
+      }
+    },
+    {
+      "sample_index": 22,
+      "id_image": "test_images/test_id_9.jpg",
+      "selfie_image": "test_images/test_selfie_12.jpg",
+      "ground_truth_ocr": {
+        "first_name": "TEODORA",
+        "last_name": "MIRON",
+        "birth_date": "26-Oct-87",
+        "CNP": "2871026044912"
+      },
+      "recognized_ocr": {
+        "first_name": "TEODORA",
+        "last_name": "MIRON",
+        "birth_date": "26-Oct-87",
+        "CNP": "2871026044912"
+      },
+      "ocr_cer": {
+        "first_name": 0.0,
+        "last_name": 0.0,
+        "birth_date": 0.0,
+        "CNP": 0.0
+      },
+      "face_verification": {
+        "same_person_ground_truth": false,
+        "verification_result": {
+          "verified": false,
+          "distance": 0.960882443968042,
+          "threshold": 0.4,
+          "model": "Facenet",
+          "detector_backend": "opencv",
+          "similarity_metric": "cosine",
+          "facial_areas": {
+            "img1": {
+              "x": 0,
+              "y": 0,
+              "w": 59,
+              "h": 71,
+              "left_eye": [
+                45,
+                26
+              ],
+              "right_eye": [
+                16,
+                27
+              ]
+            },
+            "img2": {
+              "x": 0,
+              "y": 16,
+              "w": 204,
+              "h": 227,
+              "left_eye": null,
+              "right_eye": null
+            }
+          },
+          "time": 0.63
+        },
+        "verified": false
+      }
+    },
+    {
+      "sample_index": 23,
+      "id_image": "test_images/test_id_7.jpg",
+      "selfie_image": "test_images/test_selfie_11.jpg",
+      "ground_truth_ocr": {
+        "first_name": "CATALIN IONUT",
+        "last_name": "MIRON",
+        "birth_date": "10-Sep-90",
+        "CNP": "1900910044880"
+      },
+      "recognized_ocr": {
+        "first_name": "",
+        "last_name": "",
+        "birth_date": "",
+        "CNP": ""
+      },
+      "ocr_cer": {
+        "first_name": 13,
+        "last_name": 5,
+        "birth_date": 9,
+        "CNP": 13
+      },
+      "face_verification": {
+        "same_person_ground_truth": false,
+        "verification_result": {
+          "verified": false,
+          "distance": 0.4910732507140638,
+          "threshold": 0.4,
+          "model": "Facenet",
+          "detector_backend": "opencv",
+          "similarity_metric": "cosine",
+          "facial_areas": {
+            "img1": {
+              "x": 0,
+              "y": 5,
+              "w": 60,
+              "h": 69,
+              "left_eye": [
+                44,
+                30
+              ],
+              "right_eye": [
+                20,
+                31
+              ]
+            },
+            "img2": {
+              "x": 0,
+              "y": 12,
+              "w": 100,
+              "h": 107,
+              "left_eye": [
+                72,
+                50
+              ],
+              "right_eye": [
+                31,
+                51
+              ]
+            }
+          },
+          "time": 0.59
+        },
+        "verified": false
+      }
+    },
+    {
+      "sample_index": 24,
+      "id_image": "test_images/test_id_10.jpg",
+      "selfie_image": "test_images/test_selfie_9.jpg",
+      "ground_truth_ocr": {
+        "first_name": "SILVIU CRISTIAN",
+        "last_name": "STAN",
+        "birth_date": "11-Dec-83",
+        "CNP": "1831211379814"
+      },
+      "recognized_ocr": {
+        "first_name": "SILVIU CRISTIAN",
+        "last_name": "STAN",
+        "birth_date": "11-Dec-83",
+        "CNP": "1831211379814"
+      },
+      "ocr_cer": {
+        "first_name": 0.0,
+        "last_name": 0.0,
+        "birth_date": 0.0,
+        "CNP": 0.0
+      },
+      "face_verification": {
+        "same_person_ground_truth": false,
+        "verification_result": {
+          "verified": false,
+          "distance": 0.910582249489136,
+          "threshold": 0.4,
+          "model": "Facenet",
+          "detector_backend": "opencv",
+          "similarity_metric": "cosine",
+          "facial_areas": {
+            "img1": {
+              "x": 0,
+              "y": 3,
+              "w": 47,
+              "h": 58,
+              "left_eye": null,
+              "right_eye": null
+            },
+            "img2": {
+              "x": 0,
+              "y": 0,
+              "w": 60,
+              "h": 71,
+              "left_eye": [
+                46,
+                25
+              ],
+              "right_eye": [
+                18,
+                27
+              ]
+            }
+          },
+          "time": 0.63
         },
         "verified": false
       }
     }
   ],
   "verification_stats": {
-    "TP": 2,
-    "TN": 1,
+    "TP": 14,
+    "TN": 10,
     "FP": 0,
     "FN": 0,
     "FAR": 0.0,
