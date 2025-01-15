@@ -13,3 +13,5 @@ private/
 
 # Ignore virtual environment directory
 venv/
+
+deepface_env/

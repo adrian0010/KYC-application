@@ -4,8 +4,8 @@ from face_verification_deepface import verify_faces  # Import the verify_faces f
 
 if __name__ == "__main__":
     # Example file paths (replace with your own)
-    id_image_path = "images/CI_Specimen4.jpg"
-    selfie_image_path = "images/CI_Selfie0.jpeg"
+    id_image_path = "private/CI_Specimen0.jpeg" 
+    selfie_image_path = "private/CI_Selfie0.jpeg"
 
     # Step 1: Detect and extract face from ID
     face_id = detect_and_extract_face_mtcnn(
