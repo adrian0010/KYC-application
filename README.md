@@ -6,17 +6,35 @@ This project is a Know Your Customer (KYC) application that uses various Optical
 
 ```
 KYC-application
+├── app
+│   └── kyc-app
+│       └── templates
+│           └── index.html      # HTML template for the KYC application
+├── app_v1
+│   ├── main.py                 # Main Streamlit application script
+│   └── temp                    # Temporary directory for storing images
 ├── FaceRecognition
-│   └── face_recognition.py     # Face recognition related code
-├── images
-│   └── CI_Specimen.jpeg        # Sample image for OCR
+│   ├── DeepFace.py             # DeepFace related code
+│   ├── face_detection_mtcnn.py # Face detection using MTCNN
+│   ├── face_verification_deepface.py # Face verification using DeepFace
+│   ├── ImagePreprocess.py      # Image preprocessing code
+│   └── main copy.py            # Backup of the main script
+├── images                      # Directory for storing images
+├── kpi_results.json            # JSON file for storing KPI results
 ├── OCR
 │   ├── EasyOCR.py              # EasyOCR script
 │   ├── Keras-OCR.py            # Keras-OCR script
 │   ├── PaddleOCR.py            # PaddleOCR script
 │   └── Pytesseract.py          # Pytesseract script
 ├── output                      # Directory for OCR output results
+├── test
+│   ├── kpi_tester.py           # Script for testing KPIs
+│   ├── test.ipynb              # Jupyter notebook for testing
+│   └── test_images             # Directory for test images
+├── uploads                     # Directory for uploaded files
 ├── .gitignore                  # Git ignore file
+├── Automated_KYC_System_Presentation.pptx # Project presentation
+├── ProjectRequirements.txt     # Project requirements
 ├── README.md                   # Project documentation
 └── requirements.txt            # Project dependencies
 ```
@@ -51,8 +69,29 @@ The project uses the following OCR tools:
 
 ## Usage
 
-### EasyOCR
+### Running the Streamlit Application
+
+To run the Streamlit application:
+```sh
+streamlit run app_v1/main.py
+```
+
+### Running the EasyOCR Script
 
 To run the EasyOCR script:
 ```sh
 python OCR/EasyOCR.py
+```
+
+### Running the KPI Tests
+
+To run the KPI tests:
+```sh
+python test/kpi_tester.py
+```
+
+This will process the test images and produce a JSON output with the KPI results.
+
+## Project Requirements
+
+Refer to the `ProjectRequirements.txt` file for detailed project requirements and guidelines.
